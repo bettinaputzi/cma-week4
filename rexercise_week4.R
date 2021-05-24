@@ -41,4 +41,7 @@ wildschwein$E
 e_dist_wildschwein<-e_dist(wildschwein$E,wildschwein$N)
 
 #Task 2
+wildschwein_filter<-wildschwein%>%
+  filter(DatetimeUTC>"2015-04-01" & DatetimeUTC<="2015-04-15")
 
+# Task 3
