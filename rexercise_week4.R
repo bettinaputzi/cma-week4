@@ -81,3 +81,16 @@ wildschwein_filter_j <- wildschwein_filter_j %>%
     close_Rosa_Ruth= dist_Rosa_Ruth < 100
   )
 
+
+# Task 5
+wildschwein_filter_j_meets<-wildschwein_filter_j%>%
+  filter(close_Sabi_Rosa=="TRUE")
+
+plot_sabi_ruth<- ggplot()+
+  geom_point(data=wildschwein_filter_sabi,aes(E,N,color="Sabi"), alpha=0.2)+
+  geom_point(data=wildschwein_filter_rosa,aes(E,N,color="Rosa"), alpha=0.2)+
+  geom_point(data=wildschwein_filter_j_meets,aes(E.Sabi,N.Sabi,color="Sabi", alpha=0.2),shape = 21, colour = "black")+
+  geom_point(data=wildschwein_filter_j_meets, aes(E.Rosa,N.Rosa,color="Rosa", alpha=0.2),shape = 21, colour = "black")+
+  xlim(2569900,2571100)+
+  ylim(1204400,1205600)
+plot_sabi_ruth
